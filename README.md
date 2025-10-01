@@ -1,34 +1,57 @@
-# Automated Sensor Data Analysis Report Generator
+センサーデータ解析＆可視化ツール (Sensor Data Analysis & Visualization Tool)
+概要 (Overview)
+このプロジェクトは、テキストファイル形式のセンサーデータを解析し、異常値を検出して、結果をテキストレポートとグラフで自動的に出力するPythonスクリプトです。
 
-## Overview
+データ処理には業界標準ライブラリであるpandasを、可視化にはmatplotlibを利用しており、効率的で実用的なデータ分析が可能です。
 
-This is a Python script that reads sensor data from a text file, automatically detects anomalous values that exceed a specified threshold, and generates a detailed analysis report.
+主な機能 (Key Features)
+高速なデータ処理: pandasを利用して、大規模なデータファイルでも効率的に読み込み、処理します。
 
-## Key Features
+異常検知: 設定された閾値（Threshold）を超えるデータを自動で検出します。
 
-  - **Data Loading:** Reads numerical data line-by-line from a source text file.
-  - **Anomaly Detection:** Identifies and flags data points that exceed a predefined threshold (e.g., `50.0`).
-  - **Report Generation:** Automatically creates a summary report that includes the analysis timestamp, the source filename, the threshold used, and a list of all detected anomalies with their count.
-  - **Robust Error Handling:** Gracefully handles common errors, such as a missing input file or non-numeric data, to prevent the program from crashing.
+レポート自動生成: 解析日時、使用ファイル、検出された異常の総数と値をまとめたテキストレポート (anomaly_report.txt) を生成します。
 
-## Requirements
+グラフによる可視化: 全データと検出された異常値をプロットしたグラフ (anomaly_graph.png) を自動で保存し、結果を直感的に理解できます。
 
-  - Python 3.x
+堅牢なエラー処理: 解析対象のファイルが存在しない場合や、ファイルが空の場合でもプログラムが停止しないように、エラー処理を実装しています。
 
-## How to Use
+動作環境 (Requirements)
+Python 3.7+
 
-1.  Place your sensor data file, named `sensor_data.txt`, in the same directory as the script. The data file should contain one numerical value per line.
+pandas
 
-2.  Open your terminal or command prompt and run the script using the following command:
+matplotlib
 
-    ```bash
-    python your_script_name.py
-    ```
+インストール (Installation)
+このスクリプトを実行する前に、必要なライブラリをインストールしてください。
 
-    *(Note: Replace `your_script_name.py` with the actual name of the file.)*
+pip install pandas matplotlib
 
-3.  Upon execution, a new file named `report.txt` will be automatically generated in the same directory, containing the results of the analysis.
+使い方 (Usage)
+データファイルの準備:
+sensor_data.txt という名前で、1行に1つの数値データが記録されたテキストファイルを用意し、sensor_analyzer.py と同じディレクトリに配置します。
 
-## License
+スクリプトの実行:
+ターミナルで以下のコマンドを実行します。
 
+python sensor_analyzer.py
+
+結果の確認:
+実行が完了すると、同じディレクトリに以下の2つのファイルが自動で生成されます。
+
+anomaly_report.txt：解析結果がまとめられたテキストレポート。
+
+anomaly_graph.png：データのトレンドと異常値が示されたグラフ画像。
+
+設定の変更 (Configuration)
+入力ファイル名、出力ファイル名、異常検知の閾値は、sensor_analyzer.py スクリプト冒頭の以下の定数を変更することで、簡単にカスタマイズできます。
+
+# --- Configuration Constants ---
+INPUT_FILENAME = 'sensor_data.txt'
+REPORT_FILENAME = 'anomaly_report.txt'
+OUTPUT_IMAGE_FILENAME = 'anomaly_graph.png'
+THRESHOLD = 100.0
+
+ライセンス (License)
+このプロジェクトはMITライセンスの下で公開されています。
 This project is licensed under the MIT License.
