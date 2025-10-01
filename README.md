@@ -1,10 +1,8 @@
-センサーデータ解析＆可視化ツール (Sensor Data Analysis & Visualization Tool)
-概要 (Overview)
+# センサーデータ解析＆可視化ツール (Sensor Data Analysis & Visualization Tool)
+# 概要 (Overview)
 このプロジェクトは、テキストファイル形式のセンサーデータを解析し、異常値を検出して、結果をテキストレポートとグラフで自動的に出力するPythonスクリプトです。
 
-データ処理には業界標準ライブラリであるpandasを、可視化にはmatplotlibを利用しており、効率的で実用的なデータ分析が可能です。
-
-主な機能 (Key Features)
+# 主な機能 (Key Features)
 高速なデータ処理: pandasを利用して、大規模なデータファイルでも効率的に読み込み、処理します。
 
 異常検知: 設定された閾値（Threshold）を超えるデータを自動で検出します。
@@ -15,19 +13,14 @@
 
 堅牢なエラー処理: 解析対象のファイルが存在しない場合や、ファイルが空の場合でもプログラムが停止しないように、エラー処理を実装しています。
 
-動作環境 (Requirements)
+# 動作環境 (Requirements)
 Python 3.7+
 
 pandas
 
 matplotlib
 
-インストール (Installation)
-このスクリプトを実行する前に、必要なライブラリをインストールしてください。
-
-pip install pandas matplotlib
-
-使い方 (Usage)
+# 使い方 (Usage)
 データファイルの準備:
 sensor_data.txt という名前で、1行に1つの数値データが記録されたテキストファイルを用意し、sensor_analyzer.py と同じディレクトリに配置します。
 
@@ -41,7 +34,7 @@ python sensor_analyzer.py
 
 anomaly_report.txt：解析結果がまとめられたテキストレポート。
 
-anomaly_graph.png：データのトレンドと異常値が示されたグラフ画像。
+anomaly_graph.png：データと異常値が示されたグラフ画像。
 
 設定の変更 (Configuration)
 入力ファイル名、出力ファイル名、異常検知の閾値は、sensor_analyzer.py スクリプト冒頭の以下の定数を変更することで、簡単にカスタマイズできます。
@@ -51,7 +44,3 @@ INPUT_FILENAME = 'sensor_data.txt'
 REPORT_FILENAME = 'anomaly_report.txt'
 OUTPUT_IMAGE_FILENAME = 'anomaly_graph.png'
 THRESHOLD = 100.0
-
-ライセンス (License)
-このプロジェクトはMITライセンスの下で公開されています。
-This project is licensed under the MIT License.
