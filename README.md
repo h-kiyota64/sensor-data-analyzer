@@ -1,18 +1,30 @@
-# センサーデータ解析レポート自動生成ツール
+Automated Sensor Data Analysis Report Generator
+Overview
+This is a Python script that reads sensor data from a text file, automatically detects anomalous values that exceed a specified threshold, and generates a detailed analysis report.
 
-## 概要
+Key Features
+Data Loading: Reads numerical data line-by-line from a source text file.
 
-これは、センサーデータが記録されたテキストファイルを読み込み、指定された閾値を超える異常値を自動で検出して、詳細なレポートを生成するPythonプログラムです。
+Anomaly Detection: Identifies and flags data points that exceed a predefined threshold (e.g., 50.0).
 
-## 主な機能
+Report Generation: Automatically creates a summary report that includes the analysis timestamp, the source filename, the threshold used, and a list of all detected anomalies with their count.
 
-- **データ読み込み**: テキストファイルから数値を一行ずつ読み込みます。
-- **異常検知**: 設定された閾値（例: 50.0）を超えるデータを異常として検出します。
-- **レポート生成**: 解析日時、使用したファイル名、閾値、検出された異常の回数と値をまとめたレポートを自動で作成します。
-- **エラー処理**: ファイルが存在しない場合や、データに数値以外の文字が含まれている場合でも、プログラムがクラッシュしないように作られています。
+Robust Error Handling: Gracefully handles common errors, such as a missing input file or non-numeric data, to prevent the program from crashing.
 
-## 使い方
+Requirements
+Python 3.x
 
-1. `sensor_data.txt`という名前のデータファイルを、このプログラムと同じフォルダに置きます。
-2. ターミナルで `python スクリプト名.py` を実行します。（`スクリプト名.py`はあなたがダウンロードしたファイル名に置き換えてください）
-3. `report.txt`という名前で解析レポートが自動的に生成されます。
+How to Use
+Place your sensor data file, named sensor_data.txt, in the same directory as the script. The data file should contain one numerical value per line.
+
+Open your terminal or command prompt and run the script using the following command:
+
+Bash
+
+python your_script_name.py
+(Note: Replace your_script_name.py with the actual name of the file.)
+
+Upon execution, a new file named report.txt will be automatically generated in the same directory, containing the results of the analysis.
+
+License
+This project is licensed under the MIT License.
